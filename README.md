@@ -17,10 +17,10 @@ OpenF1 API  →  Python  →  MySQL  →  대시보드
 
 ✅ 진행 현황
 
- OpenF1 API 호출 및 JSON 저장
- pandas로 데이터 정제 (Transform)
- MySQL 적재 (Load)
- 대시보드 연결 (Viz)
+ OpenF1 API 호출 및 JSON 저장 <br>
+ pandas로 데이터 정제 (Transform) <br>
+ MySQL 적재 (Load) <br>
+ 대시보드 연결 (Viz) <br>
  자동화 (스케줄링)
 
 <br>
