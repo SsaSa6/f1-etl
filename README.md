@@ -15,7 +15,7 @@ F1의 다양한 데이터를 수집·정제하여 내가 원하는 방식으로 
 OpenF1 API  →  Python  →  MySQL  →  대시보드
 <br>
 
-✅ 진행 현황
+✅ 해야 할 것
 
  OpenF1 API 호출 및 JSON 저장 <br>
  pandas로 데이터 정제 (Transform) <br>
