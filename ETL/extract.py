@@ -11,7 +11,7 @@ def main(endpoint, year): #메인 실행
     if endpoint in year_group:
         data = get_data_by_year(endpoint, year)
     else:
-        data = get_data_by_sessions(endpoint, year)
+        data = get_data_by_meetings(endpoint, year)
     
     save_json(data, f"f1_{year}_{endpoint}.json")
 
@@ -29,28 +29,28 @@ def get_f1_data(endpoint, params=""): #원하는 api를 호출해서 json파일�
     
 
 
-def get_session_keys(year): #sessions.json에서 sessions_key 가져오기
-    sessions = get_f1_data("sessions",f"?year={year}")
+def get_meetings_keys(year): #meetings.json에서 meeting_key 가져오기
+    meetings = get_f1_data("meetings",f"?year={year}")
 
-    session_keys = []
+    meetings_keys = []
 
-    for session in sessions:
-        session_keys.append(session['session_key'])
+    for meeting in meetings:
+        meetings_keys.append(meeting['meeting_key'])
 
-    return session_keys
+    return meetings_keys
 
 
-def get_data_by_sessions(endpoint, year): #세션키로 돌면서 원하는 데이터 가져오기
-    keys = get_session_keys(year)
+def get_data_by_meetings(endpoint, year): #세션키로 돌면서 원하는 데이터 가져오기
+    keys = get_meetings_keys(year)
 
     data = []
     
-    for sessions in keys:
-        print(f"받는 중... session_key={sessions}")
-        result = get_f1_data(endpoint,f"?session_key={sessions}")
+    for meetings_key in keys:
+        print(f"받는 중... meeting_key={meetings_key}")
+        result = get_f1_data(endpoint,f"?meeting_key={meetings_key}")
         if result is not None:
             data.extend(result)
-        time.sleep(2)
+        time.sleep(0.2)
 
     return data
 
@@ -68,4 +68,4 @@ def save_json(data, filename): #저장
         json.dump(data,file,ensure_ascii=False,indent=4)
 
 if __name__ == "__main__": #다른 파일에서 import할때 실행안되고 이 파일에서만 실행되게
-    main("drivers", 2025)
+    main("laps", 2025)
