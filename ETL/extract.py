@@ -68,4 +68,4 @@ def save_json(data, filename): #저장
         json.dump(data,file,ensure_ascii=False,indent=4)
 
 if __name__ == "__main__": #다른 파일에서 import할때 실행안되고 이 파일에서만 실행되게
-    main("session_result", 2025)
+    main("starting_grid", 2025)
