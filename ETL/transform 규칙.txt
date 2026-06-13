@@ -1,3 +1,59 @@
 #f1_2025_drivers
 중복 제거 : 중복 값을 제거해서 드라이버당 하나의 데이터만을 남긴다. 
+컬럼 제거: headshot_url(불필요), country_code(전부 null),gmt_offset(안쓸듯),meeting_key,session_key
+타입 : 변환 없음
+기본키 : driver_number
+
+#f1_2025_sessions
+중복 제거 : 없음
+컬럼 제거: 제거 없음
+타입 : date_start,date_end
+기본키 : session_key
+
+#f1_2025_meetings
+중복 제거 : 없음 
+컬럼 제거: circuit_info_url(필요없음), gmt_offset(안쓸듯?)
+타입 : date_start,date_end
+기본키 : meeting_key
+
+#f1_2025_session_result
+중복 제거 : 없음
+컬럼 제거: meeting_key
+타입 : 변환 없음
+기본키 : driver_number, session_key
+
+#f1_2025_starting_grid
+중복 제거 : 없음
+컬럼 제거: meeting_key
+타입 : 변환 없음
+기본키 : driver_number,session_key
+
+#f1_2025_stints
+중복 제거 : 없음
+컬럼 제거: meeting_key
+타입 : 변환 없음
+기본키 : driver_number
+
+#f1_2025_pit
+중복 제거 : 중복 값을 제거해서 드라이버당 하나의 데이터만을 남긴다. 
 컬럼 제거: headshot_url(불필요), country_code(전부 null)
+타입 : 변환 없음
+기본키 : driver_number
+
+#f1_2025_laps
+중복 제거 : 중복 값을 제거해서 드라이버당 하나의 데이터만을 남긴다. 
+컬럼 제거: headshot_url(불필요), country_code(전부 null)
+타입 : 변환 없음
+기본키 : driver_number
+
+#f1_2025_championship_drivers
+중복 제거 : 중복 값을 제거해서 드라이버당 하나의 데이터만을 남긴다. 
+컬럼 제거: headshot_url(불필요), country_code(전부 null)
+타입 : 변환 없음
+기본키 : driver_number
+
+#f1_2025_championship_teams
+중복 제거 : 중복 값을 제거해서 드라이버당 하나의 데이터만을 남긴다. 
+컬럼 제거: headshot_url(불필요), country_code(전부 null)
+타입 : 변환 없음
+기본키 : driver_number
