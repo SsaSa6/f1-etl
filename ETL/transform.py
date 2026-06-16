@@ -13,15 +13,24 @@ def load_json(filename):
 
     return df
 
-def clean_outlier(data):
-    iqr1 = np.quantile(0.25)# 제 1분위수
-    iqr3 = np.quantile(0.75)# 제 3분위수
-
-def clean_duplicated():
-    pass
-
 def clean_drivers():
     df = load_json("f1_2025_drivers.json")
 
+    df = df.drop_duplicates('driver_number')
+
+    df = df.drop(['headshot_url','country_code','meeting_key','session_key'],axis=1)
+
+    return df
+
+def save_clean(clean_data,filename):
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir,f"{filename}")
+
+    clean_data.to_csv(file_path,index = False)
+
 def main():
-    pass
+    df = clean_drivers()
+    save_clean(df, "clean_drivers.csv")
+
+if __name__ == "__main__":
+    main()
