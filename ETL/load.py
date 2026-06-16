@@ -18,4 +18,4 @@ db = os.getenv("DB_NAME")
 engine = create_engine(f"mysql+pymysql://{user}:{password}@{host}/{db}")
 
 df.to_sql("f1_2025_drivers", engine, if_exists="append", index=False)
-print("적재 완료!")
+print("적재 성공")
