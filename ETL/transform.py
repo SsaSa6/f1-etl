@@ -27,6 +27,9 @@ def clean_session_result():
 
     df = df.drop(['meeting_key'],axis=1)
 
+def clean_starting_grid():
+    pass
+
 def save_clean(clean_data,filename):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(base_dir,f"{filename}")
