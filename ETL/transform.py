@@ -22,6 +22,11 @@ def clean_drivers():
 
     return df
 
+def clean_session_result():
+    df = load_json("f1_2025_session_result.json")
+
+    df = df.drop(['meeting_key'],axis=1)
+
 def save_clean(clean_data,filename):
     base_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(base_dir,f"{filename}")
